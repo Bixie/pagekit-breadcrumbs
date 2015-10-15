@@ -48,7 +48,7 @@ return [
 				$nodes = [$node];
 				while ($parent_id = $node->parent_id) {
 
-					if ($node = $node->find($parent_id)) {
+					if ($node = $node->find($parent_id, true)) {
 						$node->set('isFrontpage', $frontpage == $node->id);
 						$frontpageSet = $frontpageSet ? : $node->get('isFrontpage');
 						$nodes[] = $node;
@@ -57,7 +57,7 @@ return [
 				}
 
 				if (!$frontpageSet) {
-					$breadcrumbs->addNode($node->find($frontpage));
+					$breadcrumbs->addNode($node->find($frontpage, true));
 				}
 
 				foreach (array_reverse($nodes) as $node) {
