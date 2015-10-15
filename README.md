@@ -12,7 +12,7 @@ The extension will be installed automatically.
 
 To add items to the breadcrumbs, simply do so in your controller when preparing the view:
 
-```
+```php
 if ($breadcrumbs = App::module('bixie/breadcrumbs')) {
 
     $breadcrumbs->addUrl([
@@ -25,7 +25,7 @@ if ($breadcrumbs = App::module('bixie/breadcrumbs')) {
 
 An example for adding a category tree to the breadcrumbs
 
-```
+```php
 if ($breadcrumbs = App::module('bixie/breadcrumbs')) {
     
     $crumbs = [['title' => $category->title, 'url' => $category->getUrl()]];
