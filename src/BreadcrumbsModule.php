@@ -28,13 +28,11 @@ class BreadcrumbsModule extends Module
 	}
 
 	/**
-	 * Add a path to the breadcrumbs
-	 *
-	 * @return string
+	 * Add an url to the breadcrumbs
 	 */
-	public function addUrl($url, $title)
+	public function addUrl($data)
 	{
-		$this->breadcrumbs->add(compact('url', 'title'));
+		$this->breadcrumbs->add($data);
 	}
 
 	/**
