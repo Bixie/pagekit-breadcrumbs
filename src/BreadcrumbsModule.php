@@ -49,6 +49,9 @@ class BreadcrumbsModule extends Module
 		]);
 	}
 
+	/**
+	 * @return \ArrayIterator
+	 */
 	public function getBreadcrumbs () {
 		return $this->breadcrumbs->getIterator();
 	}

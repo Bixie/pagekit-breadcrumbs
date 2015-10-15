@@ -34,9 +34,11 @@ class Breadcrumb
         $this->data = $data;
     }
 
-    /**
-     * {@inheritdoc}
-     */
+	/**
+	 * @param string $key
+	 * @param null $default
+	 * @return array|mixed
+	 */
     public function get($key, $default = null)
     {
         if (is_array($key)) {

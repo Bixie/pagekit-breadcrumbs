@@ -42,15 +42,12 @@ return [
 				$breadcrumbs = $app->module('bixie/breadcrumbs');
 				$frontpage = $app->config('system/site')->get('frontpage');
 
-				$node->set('isFrontpage', $frontpage == $node->id);
-				$frontpageSet = $node->get('isFrontpage');
-
+				$frontpageSet = $frontpage == $node->id;
 				$nodes = [$node];
 				while ($parent_id = $node->parent_id) {
 
 					if ($node = $node->find($parent_id, true)) {
-						$node->set('isFrontpage', $frontpage == $node->id);
-						$frontpageSet = $frontpageSet ? : $node->get('isFrontpage');
+						$frontpageSet = $frontpageSet ? : $frontpage == $node->id;
 						$nodes[] = $node;
 					}
 
@@ -64,7 +61,6 @@ return [
 					$breadcrumbs->addNode($node);
 				}
 			}
-
 		}
 
 	]
