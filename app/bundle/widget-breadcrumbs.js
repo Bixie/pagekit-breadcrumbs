@@ -45,30 +45,80 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(2)
-	module.exports.template = __webpack_require__(3)
 
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(3)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\BixieProjects\\pagekit\\pagekit\\packages\\bixie\\breadcrumbs\\app\\components\\widget-breadcrumbs.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
 
 /***/ },
 /* 1 */,
 /* 2 */
 /***/ function(module, exports) {
 
+	'use strict';
+
+	// <template>
+
+	//     <div class="uk-grid pk-grid-large" data-uk-grid-margin>
+
+	//         <div class="uk-flex-item-1 uk-form-horizontal">
+
+	//             <div class="uk-form-row">
+
+	//                 <label for="form-title" class="uk-form-label">{{ 'Title' | trans }}</label>
+
+	//                 <div class="uk-form-controls">
+
+	//                     <input id="form-title" class="uk-form-width-large" type="text" name="title" v-model="widget.title" v-validate="required">
+
+	//                     <p class="uk-form-help-block uk-text-danger" v-show="form.title.invalid">{{ 'Title cannot be blank.' | trans }}</p>
+
+	//                 </div>
+
+	//             </div>
+
+	//         </div>
+
+	//         <div class="pk-width-sidebar pk-width-sidebar-large">
+
+	//             <partial name="settings"></partial>
+
+	//         </div>
+
+	//     </div>
+
+	// </template>
+
+	// <script>
+
 	module.exports = {
 
-	        section: {
-	            label: 'Settings'
-	        },
+	    section: {
+	        label: 'Settings'
+	    },
 
-	        replace: false,
+	    replace: false,
 
-	        props: ['widget', 'config', 'form'],
+	    props: ['widget', 'config', 'form'],
 
-	        created: function () {
-	            this.widget.title = this.widget.title || this.$trans('Breadcrumbs');
-	        }
-	    };
+	    created: function created() {
+	        this.widget.title = this.widget.title || this.$trans('Breadcrumbs');
+	    }
+	};
 
-	    window.Widgets.components['bixie-widget-breadcrumbs:settings'] = module.exports;
+	window.Widgets.components['bixie-widget-breadcrumbs:settings'] = module.exports;
+
+	// </script>
 
 /***/ },
 /* 3 */
