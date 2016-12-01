@@ -61,6 +61,15 @@ return [
 					$breadcrumbs->addNode($node);
 				}
 			}
+		},
+
+		'view.blog/post' => function ($event, $view) {
+            if ($post = $event['post']) {
+                $this->addUrl([
+                    'title' => $post->title,
+                    'url' => ''
+                ]);
+            }
 		}
 
 	]
