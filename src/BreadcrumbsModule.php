@@ -27,18 +27,21 @@ class BreadcrumbsModule extends Module
 
 	}
 
-	/**
-	 * Add an url to the breadcrumbs
-	 */
+    /**
+     * Add an url to the breadcrumbs
+     * @param $data
+     * @return $this
+     */
 	public function addUrl($data)
 	{
 		$this->breadcrumbs->add($data);
+		return $this;
 	}
 
 	/**
 	 * Add a path to the breadcrumbs
 	 * @param Node $node
-	 * @return string
+	 * @return $this
 	 */
 	public function addNode(Node $node)
 	{
@@ -47,6 +50,7 @@ class BreadcrumbsModule extends Module
 			'url' => $node->getUrl(),
 			'data' => $node->data
 		]);
+        return $this;
 	}
 
 	/**
